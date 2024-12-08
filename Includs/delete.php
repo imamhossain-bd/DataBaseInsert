@@ -14,10 +14,10 @@ if ($id) {
     $sql = "DELETE FROM emp_data WHERE id = $id";
 
     if ($conn->query($sql)) {
-        echo "Employee deleted successfully!";
+        header("Location: ../main.php");
+        exit();
     } else {
         echo "Error: " . $conn->error;
     }
 }
 ?>
-<a href="../main.php">Back to Employee List</a>

@@ -43,7 +43,7 @@ $result = $conn->query("SELECT * FROM emp_data");
     <h1>Employee Management</h1>
 
     <!-- Links to Forms -->
-
+    
     <!-- Display Data in Table -->
     <h2>Employee List</h2>
     <table>
@@ -57,7 +57,9 @@ $result = $conn->query("SELECT * FROM emp_data");
         </tr>
         <?php
         if ($result->num_rows > 0) {
+            $count = 1;
             while ($row = $result->fetch_assoc()) {
+                $row['id']=$count++;
                 echo "
                 <tr>
                     <td>{$row['id']}</td>
@@ -66,9 +68,9 @@ $result = $conn->query("SELECT * FROM emp_data");
                     <td>{$row['salary']}</td>
                     <td>{$row['hireDate']}</td>
                     <td>
-                        <a href='Includes/insert.php?id={$row['id']}'><button>Insert</button></a>
-                        <a href='Includes/update.php?id={$row['id']}'><button>Update</button></a>
-                        <a href='Includes/delete.php?id={$row['id']}'><button>Delete</button></a>
+                        <a href='Includs/insert.php?id={$row['id']}'><button>Insert</button></a>
+                        <a href='Includs/update.php?id={$row['id']}'><button>Update</button></a>
+                        <a href='Includs/delete.php?id={$row['id']}'><button>Delete</button></a>
                     </td>
                 </tr>";
             }

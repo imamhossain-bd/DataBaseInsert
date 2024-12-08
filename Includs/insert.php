@@ -18,7 +18,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $sql = "INSERT INTO emp_data (name, email, salary, hireDate) VALUES ('$name', '$email', '$salary', '$hireDate')";
 
     if ($conn->query($sql)) {
-        echo "New employee added successfully!";
+        header("Location: ../main.php");
+        exit();
     } else {
         echo "Error: " . $conn->error;
     }
@@ -37,8 +38,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="email" name="email" placeholder="Email" required><br>
         <input type="number" name="salary" placeholder="Salary" required><br>
         <input type="date" name="hireDate" required><br>
-        <button type="submit">Add Employee</button>
+        <button type="submit" href="../main.php">Add Employee</button>
     </form>
-    <a href="../main.php">Back to Employee List</a>
+    
 </body>
 </html>
