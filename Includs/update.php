@@ -42,5 +42,6 @@ if (isset($_POST['update'])) {
     </form>
 </body>
 </html>
+<a href="../main.php">Back to Employee List</a>
 
 <?php $conn->close(); ?>

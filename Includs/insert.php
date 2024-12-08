@@ -40,6 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="date" name="hireDate" required><br>
         <button type="submit" href="../main.php">Add Employee</button>
     </form>
-    
+    <a href="../main.php">Back to Employee List</a>
 </body>
 </html>
+
